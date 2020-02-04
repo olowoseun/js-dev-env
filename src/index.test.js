@@ -1,8 +1,5 @@
 import { expect } from 'chai';
-import jsdom from 'jsdom';
-import fs from 'fs';
-
-const { JSDOM } = jsdom;
+import { JSDOM } from 'jsdom';
 
 describe('Our first test', () => {
   it('should pass', () => {
@@ -20,8 +17,6 @@ describe('index.html', () => {
   });
 
   it('should say hello', () => {
-    // const index = fs.readFileSync('./src/index.html', 'utf-8');
-    // jsdom.env(index, function(err, window) {
     const h1 = document.querySelectorAll('h1')[0];
     expect(h1.innerHTML).to.equal('Hello World!');
   });
